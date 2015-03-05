@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="정찬명">
+	<meta name="description" content="이 페이지는 프론트엔드 수업 코딩입니다.">
 	<title>HTML5</title>
 	<link rel="stylesheet" href="default.css">
 <!--  <meta name=”viewport” content=”width=device-width”, initial-scale=1, minimum-scale=1”, user-scalable=no> -->
@@ -10,6 +12,7 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<!--IE9이상은 상기 스크립트를 해석 안 하고 8이하는 해석한다. lt는 less than이라는 뜻-->
 </head>
 <body>
 	<div class="container">
@@ -20,8 +23,8 @@
 				<h2>메인 메뉴</h2>
 				<button type="button">메뉴 열기</button>
 				<ul>
-					<li>
-						<a href="#">메뉴 1 advi adfdsaf dfprg ipoqr hgihreuighu ibeli dfbvl</a>
+					<li class="active">
+						<a href="#">메뉴 1</a>
 						<ul>
 							<li><a href="#">메뉴 1-1</a></li>
 							<li><a href="#">메뉴 1-2</a></li>
@@ -52,7 +55,9 @@
 		</header>
 		<div class="body">
 			<main id="main">
-				#main
+				<article>
+					<img src="http://dummyimage.com/1024X100/000000/fff" alt>
+				</article>
 			</main>
 			<nav class="lnb">
 				<h2>메뉴1</h2>
@@ -70,6 +75,7 @@
 						<li><a href="#">참고링크 3</a></li>
 					</ul>
 			</aside>
+			<!--<div style="clear: both"></div> css에서 작성한 것이 이런 효과를 낸다.-->
 		</div>
 		<footer class="footer">
 			<p>Copyright &copy; FE.CAMP. All rights reserved.</p>
