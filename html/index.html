@@ -6,6 +6,8 @@
 	<meta name="author" content="정찬명">
 	<meta name="description" content="이 페이지는 프론트엔드 수업 코딩입니다.">
 	<title>HTML5</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<!--우리가 적은 css가 오버라이드되도록-->
 	<link rel="stylesheet" href="default.css">
 <!--  <meta name=”viewport” content=”width=device-width”, initial-scale=1, minimum-scale=1”, user-scalable=no> -->
 	<!--[if lt IE 9]>
@@ -15,7 +17,7 @@
 	<!--IE9이상은 상기 스크립트를 해석 안 하고 8이하는 해석한다. lt는 less than이라는 뜻-->
 </head>
 <body>
-	<div class="container">
+	<div class="ctnr">
 		<a href="#main" class="skip">메뉴건너뛰기</a>
 		<header class="header">
 			<h1>HTML5</h1>
@@ -73,9 +75,119 @@
 					<p hidden>
 						<strong>Download video:</strong> <a href="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4">MP4 format</a> | <a href="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv">Ogg format</a> | <a href="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm">WebM format</a>
 					</p>
-					<div class="vframe">
+					<div hidden class="vframe">
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/hfXZ6ydgZyo" frameborder="0" allowfullscreen></iframe>
 					</div>
+					<div hidden class="table-rwd">
+      					<table class="table">
+        					<thead>
+        						<tr>
+						            <th>#</th>
+						            <th>Table heading</th>
+						            <th>Table heading</th>
+						            <th>Table heading</th>
+						            <th>Table heading</th>
+						            <th>Table heading</th>
+						            <th>Table heading</th>
+						        </tr>
+							</thead>
+						    <tbody>
+						        <tr>
+						            <th scope="row">1</th>
+						            <td>Table cell Table cell Table cell Table cell Table cell Table cell Table cell Table cell Table cell Table cell Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						        </tr>
+						        <tr>
+						            <th scope="row">2</th>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						        </tr>
+						        <tr>
+						            <th scope="row">3</th>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						            <td>Table cell</td>
+						        </tr>
+						        </tbody>
+						      </table>
+				    		</div>
+				    	<h1 hidden>나눔고딕 테스트</h1>
+				    	<p hidden>동해물과 백두산이 마르고 닳도록</p>
+						<form class="sign-up">
+							<fieldset>
+								<legend>회원가입(필수)</legend>
+								<!--fieldset의 제목을 의미-->
+								<div class="form-group">
+									<label for="email">이메일</label>
+									<!--form control을 설명해준다. 시각장애인들을 위해. 레이블과 인풋을 같이 매핑시킴으로써 '이메일'이라는 텍스트만 눌러도 반응하게 된다.-->
+									<input type="email" class="form-control" id="email" required placeholder="abc@abc.com" readonly>
+								</div>
+								<div class="form-group">
+									<label for="pw1">비밀번호</label>
+									<input type="password" class="form-control" id="pw1" required placeholder="영문 대소문자를 사용하여 6자리 이상 작성">
+								</div>
+								<div class="form-group">
+									<label for="pw2">비밀번호 확인</label>
+									<input type="password" class="form-control" id="pw2" required placeholder="영문 대소문자를 사용하여 6자리 이상 작성">
+								</div>
+							</fieldset>
+							<fieldset>
+								<legend>추가 입력 사항(옵션)</legend>
+								<dl>
+									<dt>성별</dt>
+									<dd>
+										<input type="radio" id="male" name="gender">
+										<label for="male">남성</label>
+										<input type="radio" id="female" name="gender">
+										<label for="female">여성</label>
+									</dd>
+									<dt>취미</dt>
+									<dd>
+										<input type="checkbox" id="mtb">
+										<label for="mtb">산악자전거</label>
+										<input type="checkbox" id="football">
+										<label for="mtb">축구</label>
+										<input type="checkbox" id="motorcycle">
+										<label for="mtb">모터사이클</label>
+									</dd>
+								</dl>
+							</fieldset>
+							<button type="submit">확인</button>
+						</form>
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+						  Launch demo modal
+						</button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+						      </div>
+						      <div class="modal-body">
+						        ...
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        <button type="button" class="btn btn-primary">Save changes</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
 				</article>
 			</main>
 			<nav class="lnb">
@@ -101,6 +213,8 @@
 		</footer>
 	</div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="default.js"></script>
+<!--브라우저가 기본적인 html을 먼저 파싱하도록 js는 맨 마지막에 넣는다. 그리고 jquery먼저 그 다음 bootstrap이 오도록-->
 </body>
 </html>

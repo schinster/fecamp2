@@ -26,6 +26,7 @@ input,
 textarea,
 select{
 	font-size: 14px;
+	font-family: sans-serif;
 }
 /*body에 적용한 폰트사이즈는 일반적으로 자식들이 상속하지만, table~select는 상속하지 않기 때문에 저렇게 써준다.*/
 
@@ -51,6 +52,17 @@ video{
 
 /* All */
 
+@font-face {
+  font-family: NG; /*원래는 'Nanum Gothic'이었는데 짧게 바꿨다. 이름 중간에 공백이 있으면 따옴표로 적어줘야 한다.*/
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+  src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+}
+
 body{
 	background-image: -webkit-linear-gradient(#ccc, #fff);
 	background-image: -moz-linear-gradient(#ccc, #fff);
@@ -63,6 +75,10 @@ body{
 	font-size: 28px;
 	font-weight: 700;
 	text-shadow: 1px 1px 0px #fff, -1px -1px 0 #0f0;
+}
+
+.gnb *{
+	box-sizing: content-box;
 }
 
 .search>input{
@@ -166,6 +182,7 @@ main>article{
 	border-radius: 4px;
 	padding: 0 10px;
 	background: #fff;
+	box-sizing: content-box;/*부트스트랩 관련 보정*/
 }
 .aside h2{
 	font-size: 14px;
@@ -173,23 +190,56 @@ main>article{
 	border-bottom: 1px solid #ddd;
 	line-height: 32px;
 }
+
 .aside ul{
 	padding: 10px 0px;
 }
+
 .aside a{
 	display: block;
 	line-height: 32px;
 }
+
 .footer{
 	border-top: 1px dotted #ccc;
 }
+
 .footer>p{
 	text-align: center;
 	color: #959595;
 }
 
+.table-rwd{
+	overflow: auto;
+}
+
+.table{
+	border-collapse: collapse;
+}
+
+.table th,
+.table td{
+	border-bottom: 1px solid #ddd;
+	padding: 5px;
+}
+.table thead th{
+	background: #eee;
+	border-top: 2px solid #bbb;
+}
+.table td{
+	vertical-align: top;
+	width: 14%;
+}
+.sign-up dt{
+	font-weight: bold;
+	font-size: 16px;
+}
+.sign-up input+label{
+	margin-right: 20px;
+}
+
 /* Mobile */
-.container{
+.ctnr{
 	margin: 0 10px;
 }
 .skip{
@@ -201,6 +251,7 @@ main>article{
 	position: absolute;
 	overflow: hidden;
 	margin: 0;
+	opacity: 0;
 }
 /*absolute 처리해서 밑의 내용들이 1픽셀 밀려나가는 일이 없도록, 1px이라도 주는 이유는 면적이 조금이라도 있
 어야 낭독기가 놓치지 않을듯 하여*/
@@ -217,6 +268,7 @@ main>article{
 	cursor: pointer;
 	top: 15px;
 	right: 10px;
+	box-sizing: border-box;/*부트 스트랩 관련 보정*/
 }
 /*버튼의 박스 사이징은 '보더 박스' 사이즈다. 그러므로 높이값 속에 패팅값이 뭍힌다. input도 이러한 성질을 갖는다*/
 
@@ -229,6 +281,7 @@ main>article{
 	height: 4px;
 	border-top: 12px double #fff;
 	border-bottom: 12px double #fff;
+	box-sizing: content-box; /*부트스트랩 관련 보정*/
 }
 /*
 .gnb>button:after{
@@ -245,7 +298,7 @@ main>article{
 background: #666;
 border-radius: 4px;
 overflow: hidden;
-/*display: none; /*첫화면에서 메뉴가 닫혀있도록하기 위해*/
+display: none; /*첫화면에서 메뉴가 닫혀있도록하기 위해*/
 }
 
 .gnb ul{
@@ -300,6 +353,14 @@ overflow: hidden;
 
 /* Tablet & Desktop */
 @media (min-width: 768px){
+	body,
+	table,
+	input,
+	textarea,
+	button{
+		font-family: NG, sans-serif;
+	}
+	/*모바일에서는 내장 폰트를 쓰는 게 좋다. 그래서 태블릿과 */
 	.gnb>button{
 		display: none;
 	}
@@ -440,7 +501,7 @@ overflow: hidden;
 		position: relative;
 		left: 200px;
 	}
-	.container{
+	.ctnr{
 		max-width: 1280px;
 		/*데스크톱 해상도가 너무 높을 때는 내용이 깨알같이 작아진다. 특히 main영역이 혼자서 넓어진다. main은 600 좌우가 좋다*/
 		margin: 0 auto;
